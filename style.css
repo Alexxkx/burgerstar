@@ -1,0 +1,920 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1C1C1C;
+    color: #FFF;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+p + p {
+    margin-top: 15px;
+}
+
+/* Шапка */
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    padding: 15px 0 25px;
+}
+
+.container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo {
+    width: 60px;
+    height: 60px;
+}
+
+.header_nav {
+
+}
+
+.header_list {
+    display: flex;
+    gap: 30px;
+}
+
+.header_nav a {
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.4s;
+}
+
+.header_nav a:hover {
+    opacity: 1;
+}
+
+.header_nav a.active {
+    opacity: 1;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 16px;
+    width: 165px;
+    height: 50px;
+    background-color: rgb(246, 118, 44);
+    border-radius: 5px;
+    transition: background-color 0.4s;
+}
+
+.btn:hover {
+    background-color: rgb(246, 118, 44, 0.7);
+}
+
+.pop_up {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.pop_up.active {
+    display: block;
+}
+
+.pop_up_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.pop_up_body {
+    width: 500px;
+    margin-top: 400px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 15px 110px 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pop_up_body p {
+    font-size: 28px;
+    font-weight: 500;
+    color: #22262D;
+    margin-bottom: 40px;
+}
+
+.pop_up_body input {
+    display: block;
+    margin: 15px auto;
+    width: 330px;
+    padding: 17px 20px;
+    background-color: #E5E5E5;
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: #89909F;
+}
+
+.pop_up_body input:focus {
+    outline: none;
+}
+
+.pop_up_body button {
+    margin-top: 20px;
+    cursor: pointer;
+    display: block;
+    width: 330px;
+    margin: 60px auto 0 auto;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    color: #FFF;
+    border-radius: 10px;
+    background-color: #F6762C;
+}
+
+.pop_up_close {
+    color: #22262D;
+    font-size: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+/* Приветственная часть */
+
+.welcome {
+    padding: 240px 0;
+    margin-top: -100px;
+    background-image: url("./images/fon.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome_subtitle {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    margin-bottom: 7px;
+}
+
+.welcome_title {
+    font-size: 58px;
+}
+
+.welcome_desc {
+    font-size: 18px;
+    opacity: 0.7;
+    margin: 40px 0;
+}
+
+.welcome_area {
+    width: 550px;
+}
+
+/* Список еды */
+
+.food-list {
+    padding: 100px 0;
+}
+
+.food-list .container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 40px 15px;
+}
+
+.food-list_card {
+    width: 260px;
+    overflow: hidden;
+    background-color: #312F38;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.food-list_card:hover {
+    transform: scale(1.1);
+}
+
+.food-list_img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+}
+
+.food-list_title {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.food-list_desc {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.food-list_text {
+    padding: 30px 20px;
+}
+
+/* Бургер Кинг */
+
+.order {
+    background: #312f30;
+    padding: 60px 0;
+}
+
+.order .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 90px;
+}
+
+.order_burger {
+max-width: 470px;
+}
+
+.order_text {
+    max-width: 360px;
+}
+
+.order_title {
+    font-size: 44px;
+    margin-bottom: 25px;
+}
+
+.order_desc {
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.order_price {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #F6762C;
+}
+
+.order_price-that {
+    font-size: 16px;
+    text-decoration-line: line-through;
+    opacity: 0.5;
+}
+
+.order .btn {
+    margin-top: 10px;
+}
+
+/* Рестораны */
+
+.all {
+    position: relative;
+}
+
+.all::before {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-image: url("./images/orig.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.3);
+    z-index: -1; 
+}
+
+.restaurant {
+    padding: 150px 0;
+}
+
+.restaurant .container {
+    max-width: 1180px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.restaurant_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    border: 3px solid #fff;
+    width: 555px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.restaurant_card:nth-child(even) {
+    align-items: flex-start;
+}
+
+
+.restaurant_card:nth-child(even) .restaurant_card-text {
+    padding-left: 40px;
+    width: 210px;
+}
+
+.restaurant_card-text {
+    position: absolute;
+    color: #FFF;
+    font-size: 16px;
+    max-width: calc(100% - 40px);
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    padding-right: 20px;
+}
+
+.restaurant_img {
+    transition: transform 0.5s, filter 0.5s;
+    object-fit: cover;
+}
+
+.restaurant_card:hover .restaurant_img {
+    transform: scale(1.4);
+    filter: brightness(0.7);
+}
+
+.restaurant_title {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.restaurant_desc {
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.restaurant_price {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #F6762C;
+}
+
+.restaurant_price + .restaurant_price {
+    margin-left: 5px;
+}
+
+.restaurant_price-that {
+    text-decoration-line: line-through;
+    opacity: 0.5;
+}
+
+.restaurant .btn {
+    margin-top: 10px;
+}
+
+.btn-small {
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+}
+
+/* Обратная связь */
+
+.feedback {
+    padding-bottom: 200px;
+}
+
+.feedback .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 880px;
+}
+
+.feedback_img {
+
+}
+
+.feedback_text {
+    margin: 0;
+    text-align: center;
+    max-width: 370px;
+}
+
+.feedback_text::before {
+    content: url("./images/icons/quote.svg")
+}
+
+.feedback_desc {
+    opacity: 0.7;
+    margin: 30px 0;
+
+}
+
+.feedback_author {
+    font-weight: 500;
+    font-size: 24px;
+    font-style: normal;
+    display: block;
+}
+
+.feedback_sub {
+    font-weight: 500;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Скачать */
+
+.download {
+    background: #312f30;
+    padding: 60px 0;
+}
+
+.download .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.download_title {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.btn {
+
+}
+
+/* Подвал */
+.footer {
+    padding: 120px 0;
+}
+
+.footer a {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.footer_contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer_logo {
+    margin-bottom: 20px;
+    width: 70px;
+}
+
+.footer_link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer_link + .footer_link {
+    margin-top: 10px;
+}
+
+.footer_link::before {
+    width: 12px;
+    height: 12px;
+}
+
+.footer_link-mail::before {
+    content: url("./images/icons/mail.svg");
+}
+
+.footer_link-web::before {
+    content: url("./images/icons/global.svg");
+}
+
+.footer_nav {
+
+}
+
+.footer_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.footer_list-title {
+
+}
+
+.footer .footer_title {
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.footer_inner-list {
+
+}
+
+.footer_list-item + .footer_list-item {
+    margin-top: 15px;
+}
+
+.footer_socials {
+
+}
+
+.footer_socials-icons {
+    display: flex;
+    gap: 5px;
+}
+
+.footer_social-link img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Адаптив */
+
+@media (max-width: 1100px) {
+
+    .welcome {
+        position: relative;
+        padding: 180px 0;
+    }
+
+    .welcome::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+
+    .welcome * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .welcome_desc {
+        opacity: 0.8;
+    }
+
+    .header {
+        position: relative;
+        z-index: 1;
+    }
+
+    .restaurant {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 950px) {
+    .order .container {
+        flex-direction: column;
+        padding-right: 15px;
+    }
+
+    .order_text {
+        text-align: center;
+    }
+
+    .order .btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 850px) {
+    .footer .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "nav nav"
+            "contacts socials";
+        justify-items: center;
+    }
+
+    .footer_contacts {
+        grid-area: contacts;
+        justify-self: end;
+    }
+
+    .footer_nav {
+        grid-area: nav;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_socials {
+        grid-area: socials;
+        align-self: center;
+        justify-self: start;
+        gap: 10px;
+    }
+
+    .footer_list {
+        gap: 110px;
+    }
+
+    .footer .container {
+        column-gap: 170px;
+        row-gap: 50px;
+    }
+
+    .feedback {
+        padding-bottom: 100px;
+    }
+
+    .footer {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .header .container {
+        justify-content: space-around;
+    }
+
+    .header .btn {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .feedback_img {
+        width: 200px;
+    }
+
+    .download_title {
+        font-size: 30px;
+    }
+
+    .welcome {
+        padding: 150px 0 100px;
+        min-height: auto;
+    }
+
+    .welcome_area {
+        width: 100%;
+    }
+
+    .welcome_title {
+        font-size: 40px;
+    }
+
+    .welcome_desc {
+        margin: 20px 0;
+    }
+
+    .restaurant {
+        padding: 60px 0 100px;
+    }
+
+    .food-list {
+        padding: 50px 0;
+    }
+
+    .restaurant_title {
+        font-size: 25px;
+    }
+
+    .restaurant_card:hover .restaurant_img {
+        transform: none;
+    }
+}
+
+
+@media (max-width: 560px) {
+    .restaurant {
+        padding-bottom: 50px;
+    }
+
+    .restaurant .container {
+        gap: 20px;
+    }
+
+    .restaurant_desc {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 530px) {
+    .header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header_list {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .welcome {
+        margin-top: -240px;
+        padding-top: 290px;
+        padding-bottom: 70px;
+    }
+
+    .welcome_title {
+        font-size: 30px;
+    }
+
+    .welcome_desc {
+        font-size: 14px;
+    }
+
+    .order_title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .restaurant .container {
+        gap: 20px;
+    }
+
+    .order_burger {
+        width: 100%;
+    }
+
+    .feedback .container {
+        flex-direction: column;
+    }
+
+    .feedback_img {
+        margin-bottom: 25px;
+    }
+
+    .download {
+        padding: 30px 0;
+    }
+    
+    .download .container{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer_list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer_contacts {
+        align-items: center;
+    }
+
+    .footer_socials-icons {
+        justify-content: center;
+    }
+
+    .footer .footer_title {
+        margin-bottom: 10px;
+    }
+
+    .footer_list-item + .footer_list-item {
+        margin-top: 7px;
+    }
+
+    .footer_logo {
+        margin-bottom: 10px;
+    }
+
+    .footer .container {
+        row-gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .restaurant_img {
+        filter: brightness(0.5);
+    }
+
+    .restaurant_desc {
+        opacity: 0.8;
+    }
+
+    .restaurant_price-that {
+        opacity: 0.7;
+    }
+
+    .all::before {
+        filter: brightness(1);
+        filter: blur(5px);
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 420px) {
+    .restaurant_card {
+        align-items: center;
+    }
+
+    .restaurant_card:nth-child(even) {
+        align-items: center;
+    }
+
+    .restaurant_card:nth-child(even) .restaurant_card-text {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .restaurant_card-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .that_price {
+        display: flex;
+    }
+
+    .restaurant_title {
+        font-size: 20px;
+        margin-bottom: 7px;
+    }
+
+    .btn-small {
+        width: 110px;
+        height: 30px;
+    }
+
+    .feedback {
+        padding-top: 25px;
+    }
+}
